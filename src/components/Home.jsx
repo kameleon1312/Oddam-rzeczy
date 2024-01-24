@@ -19,7 +19,6 @@ const Home = () => {
       <HomeAboutUs />
       <HomeWhoWeHelp />
       <Contact />
-      {/* Dodaj inne komponenty Home w razie potrzeby */}
     </div>
   );
 };
