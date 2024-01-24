@@ -1,0 +1,52 @@
+@import "../settings/colors";
+
+.login-container {
+  margin-top: 37px;
+  display: flex;
+  justify-content: flex-end;
+
+  .login-button, .register-button {
+    border: none;
+    background-color: white;
+    font-size: 14px;
+    color: #737373;
+    width: 90px;
+    height: 36px;
+    cursor: pointer;
+
+    &.register-button {
+      border: 0.75px solid #fad648;
+    }
+  }
+}
+
+.navigation-container {
+  .navigation-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 24px;
+    justify-content: flex-end;
+  }
+
+  .navigation-list_element {
+    height: 20px;
+    text-align: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: $primary;
+    text-decoration: none;
+
+    a {
+      text-decoration: none;
+      color: $primary;
+    }
+
+    &.active, &:hover {
+      border: 0.75px solid $primary;
+    }
+  }
+
+  .nav-section {
+    margin-right: 100px;
+  }
+}

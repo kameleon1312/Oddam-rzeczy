@@ -1,0 +1,125 @@
+@import "../settings/colors";
+@import "../settings/fonts";
+
+.form-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  left: 293px;
+  opacity: 0.3;
+  margin-top: 30px;
+}
+.form-block {
+  position: relative;
+  z-index: 2;
+  right: 310px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-heading-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img {
+    margin-bottom: 30px;
+  }
+  .form-heading {
+    font-size: 30px;
+    width: 358px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+.form-container {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+}
+.two-labels {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  input {
+    border: none;
+    border-bottom: 1px solid $third;
+    height: 26px;
+    width: 200px;
+    background-color: #fdfdfc;
+  }
+}
+.row-columns {
+  display: flex;
+  gap: 20px;
+}
+.third-label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  textarea {
+    border: none;
+    border-bottom: 1px solid $third;
+    height: 94px;
+    background-color: #fdfbf8;
+    resize: none;
+  }
+}
+input:focus {
+  outline: none;
+}
+textarea:focus {
+  outline: none;
+}
+
+.form-btn {
+  border: 1px solid $primary;
+  padding: 20px;
+  background: none;
+  height: 30px;
+  width: 110px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.form-btn-block {
+  display: flex;
+  justify-content: end;
+}
+
+.footer-block {
+  display: flex;
+  justify-content: space-between;
+position: relative;
+gap: 488px;
+z-index: 2;
+height: 30px;
+
+  .Copyright-block {
+    display: flex;
+    justify-content: end;
+    width: 55vw;
+    color: $primary;
+    font-size: 15px;
+  }
+  .footer-icon-block {
+    margin-right: 90px;
+
+    .footer-fb-icon {
+      margin-right: 20px;
+    }
+  }
+}

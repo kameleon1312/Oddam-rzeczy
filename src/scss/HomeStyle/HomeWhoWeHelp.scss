@@ -1,0 +1,84 @@
+@import "../settings/fonts";
+@import "../settings/colors";
+
+
+.whoWeHelp-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.whoWeHelp-heading {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-family: $font-alt; 
+}
+
+.three-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.whoWeHelp-btn {
+  flex: 1;
+  max-width: 208px;
+  height: 79px;
+  border: none;
+  background-color: white;
+  color: $primary;
+  text-align: center;
+  text-wrap: wrap;
+  padding: 0 10px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+
+  &:hover {
+    border: 1px solid $primary;
+  }
+
+  &.active {
+    border: 1px solid $primary;
+  }
+}
+
+.collection-containers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.title-subtitle-description {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid black; 
+  padding-bottom: 20px; 
+}
+
+.collection-container-heading {
+  font-size: 26px;
+  color: $primary;
+  line-height: 31px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: $primary;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 18px;
+  color: $primary;
+  flex: 1;
+}

@@ -1,0 +1,92 @@
+@import '../settings/fonts.scss';
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+
+  .top-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 40px;
+
+    .left-section {
+      img {
+        position: relative;
+        width: auto;
+        height: 100vh;
+        margin-left: -360px;
+      }
+    }
+
+    .right-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  .bottom-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 50px;
+
+    .main-section {
+      text-align: center;
+      align-items: flex-start;
+      margin-top: -800px;
+      flex-direction: column;
+
+      h1 {
+        font-family: $font-base;
+        font-size: 38px;
+        margin-bottom: 10px;
+        font-weight: normal;
+      }
+
+      .decoration-section {
+        margin-top: 10px;
+        margin-right: 30px;
+
+        .decoration-logo {
+          width: 253px;
+          height: 33px;
+        }
+      }
+
+      .buttons-section {
+        background-color: white;
+        display: flex;
+        gap: 30px;
+        margin-top: 15px;
+        margin-left: 50px;
+        width: auto;
+
+        .give-items-button,
+        .organize-collection-button {
+          border: 0.75px solid #3C3C3C;
+          margin: 20px;
+          margin-left: 30px;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 38px;
+          padding: 20px 60px;
+          cursor: pointer;
+          background: none;
+          outline: none;
+
+          &:hover {
+            text-decoration: none;
+            border: 0.75px solid #FAD648;
+          }
+        }
+      }
+    }
+  }
+}

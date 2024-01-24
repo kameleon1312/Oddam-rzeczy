@@ -1,0 +1,29 @@
+.three-columns-section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    
+  }
+  
+  .column {
+    text-align: center;
+    font-weight: normal;
+    color: black;
+  }
+  
+  .column h2 {
+    font-family: Open Sans, Light;
+    font-size: 90px;
+    font-weight: normal;
+
+  }
+  
+  .column h3 {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .column p {
+    font-size: 16px;
+    margin-bottom: 50px;
+  }

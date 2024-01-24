@@ -1,0 +1,52 @@
+.home-simply-steps {
+    text-align: center; 
+    background-color: white; 
+    padding: 40px 0; 
+}
+
+.header-container {
+    background-color: white; 
+    padding: 20px; 
+}
+
+.steps-container {
+    display: flex; 
+    width: auto;
+    justify-content: center; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    background-color: #F5F5F5;
+    padding: 2px;
+}
+
+.steps {
+    display: flex;
+    margin: 0 222px;
+
+}
+
+.step {
+    flex: 1;
+    padding: 5px;
+    text-align: center;
+}
+
+.link-to-donate {
+    margin-top: 30px;
+    text-align: center; 
+}
+
+.link-to-donate a {
+    border: 0.75px solid #3C3C3C;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 38px;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    color: black;
+    padding: 20px 80px; 
+    display: inline-block; 
+    background-color: white; 
+}
+
