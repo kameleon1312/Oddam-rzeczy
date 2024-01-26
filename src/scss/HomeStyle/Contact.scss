@@ -103,10 +103,8 @@ textarea:focus {
 .footer-block {
   display: flex;
   justify-content: space-between;
-position: relative;
-gap: 488px;
-z-index: 2;
-height: 30px;
+  position: relative;
+  z-index: 1;
 
   .Copyright-block {
     display: flex;
@@ -116,7 +114,10 @@ height: 30px;
     font-size: 15px;
   }
   .footer-icon-block {
+    display: flex;
+    align-items: center;
     margin-right: 90px;
+
 
     .footer-fb-icon {
       margin-right: 20px;

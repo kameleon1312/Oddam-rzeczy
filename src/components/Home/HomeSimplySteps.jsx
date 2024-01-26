@@ -5,6 +5,8 @@ import Icon3 from '../../assets/Icon-3.svg';
 import Icon4 from '../../assets/Icon-4.svg';
 import Decoration from '../../assets/Decoration.svg';
 import { Element } from "react-scroll";
+import { Link as RouterLink } from 'react-router-dom'; 
+
 
 const HomeSimplySteps = () => {
     return (
@@ -44,7 +46,9 @@ const HomeSimplySteps = () => {
                 </div>
             </div>
             <div className="link-to-donate">
-                <a href="oddaj-rzeczy">ODDAJ<br /> RZECZY</a>
+                <RouterLink to="/logowanie">
+                ODDAJ<br /> RZECZY
+                </RouterLink>
             </div>
         </section></Element>
     );

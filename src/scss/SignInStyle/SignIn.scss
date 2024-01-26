@@ -1,65 +1,87 @@
 @import "../settings/colors";
 
-.log-section{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+.log-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 }
 
-.log-heading-block{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-margin-top: 100px;
-    .log-heading{
-font-size: 35px;
-margin-bottom: 20px;
-color: $primary;
+.log-heading-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+
+  .log-heading {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: $primary;
+  }
+}
+
+.log-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f1f1;
+  width: 384px;
+  height: 235px;
+  margin-top: 30px;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 16px;
+  width: 250px;
+
+  input {
+    margin-top: 10px;
+    background-color: #f0f1f1;
+    border: none;
+    border-bottom: 1px solid $third;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border-bottom: 1px solid $primary;
     }
+  }
 }
 
-.log-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-background-color: #F0F1F1;
-width: 384px;
-height: 235px;
-margin-top: 30px;
+.input-block:nth-of-type(1) {
+  margin-bottom: 21px;
 }
-.input-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+
+.log-btn-block {
+  width: 1100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40px;
+
+
+  .register-btn,
+  .log-btn {
+    background: none;
+    border: none;
     font-size: 16px;
-    width: 250px;
-    input{
-        margin-top: 10px;
-        background-color: #F0F1F1;
-        border: none;
-        border-bottom: 1px solid $third;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border 0.3s ease;
+    color: inherit;
+
+    &:hover {
+      border: 1px solid $primary;
     }
-}
-.input-block:nth-of-type(1){
-    margin-bottom: 21px;
+  }
+
+  .log-btn {
+    padding: 10px 15px;
+  }
 }
 
-.log-btn-block{
-width: 1100px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 40px;
-    .register-btn{
-        border: none;
-        background: none;
-    }
-    .log-btn{
-        background: none;
-        border: 1px solid $primary;
-        padding: 10px 15px;
-    }
-}

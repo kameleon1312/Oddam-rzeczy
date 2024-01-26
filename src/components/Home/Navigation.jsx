@@ -2,7 +2,6 @@ import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 
-
 const Navigation = () => {
   return (
     <section className="nav-section">
@@ -18,7 +17,7 @@ const Navigation = () => {
         <ul className="navigation-list">
           <li className="navigation-list_element">
             <ScrollLink
-              to="/"
+              to=""
               spy={true}
               smooth={true}
               offset={-70}
@@ -28,17 +27,20 @@ const Navigation = () => {
             </ScrollLink>
           </li>
 
+          <li className="navigation-list_element">
             <ScrollLink
               to="steps"
-              
+              spy={true}
+              smooth={true}
+              duration={500}
             >
               O co chodzi?
             </ScrollLink>
-          
+          </li>
 
           <li className="navigation-list_element">
             <ScrollLink
-              to="#about"
+              to="about"
               spy={true}
               smooth={true}
               offset={-70}

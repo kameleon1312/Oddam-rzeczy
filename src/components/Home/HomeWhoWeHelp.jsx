@@ -7,13 +7,11 @@ const HomeWhoWeHelp = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Pobierz dane z Supabase przy załadowaniu komponentu
     fetchData();
   }, [activeOption]);
 
   const fetchData = async () => {
     try {
-      // Dostosuj zapytanie do bazy danych Supabase
       const { data, error } = await supabase
         .from(activeOption)
         .select('*');
@@ -49,7 +47,6 @@ const HomeWhoWeHelp = () => {
       </div>
 
       <div className="content">
-        {/* Wyświetl dane pobrane z Supabase */}
         {data.map((entry) => (
           <div key={entry.id} className="collection-containers">
             <div className="title-subtitle-description">
@@ -63,9 +60,7 @@ const HomeWhoWeHelp = () => {
         ))}
       </div>
 
-      {/* Dodaj obsługę paginacji */}
       <div className="page-numbers">
-        {/* Renderuj numery stron */}
       </div>
     </div>
   );

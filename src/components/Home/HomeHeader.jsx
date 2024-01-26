@@ -29,10 +29,10 @@ const HomeHeader = () => {
             />
           </div>
           <div className="buttons-section">
-            <RouterLink to="/logowanie"> {/* Użyj RouterLink zamiast Link */}
+            <RouterLink to="/logowanie"> 
               <button className="give-items-button">ODDAJ<br /> RZECZY</button>
             </RouterLink>
-            <RouterLink to="/logowanie"> {/* Użyj RouterLink zamiast Link */}
+            <RouterLink to="/logowanie"> 
               <button className="organize-collection-button">ZORGANIZUJ<br />ZBIÓRKĘ</button>
             </RouterLink>
           </div>

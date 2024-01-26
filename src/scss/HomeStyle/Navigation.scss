@@ -13,12 +13,13 @@
     width: 90px;
     height: 36px;
     cursor: pointer;
-
-    &.register-button {
+    
+    &:hover {
       border: 0.75px solid #fad648;
     }
+    }
   }
-}
+
 
 .navigation-container {
   .navigation-list {
@@ -26,6 +27,8 @@
     gap: 30px;
     margin-top: 24px;
     justify-content: flex-end;
+    list-style-type: none;
+
   }
 
   .navigation-list_element {
@@ -47,6 +50,6 @@
   }
 
   .nav-section {
-    margin-right: 100px;
+    margin: 100px;
   }
 }
