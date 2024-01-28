@@ -5,14 +5,21 @@ import Decoration from '../../assets/Decoration.svg';
 const HomeWhoWeHelp = () => {
   const [activeOption, setActiveOption] = useState('foundations');
   const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = {
+    foundations: 3,
+    ngo: 2,
+    local: 1,
+  };
 
   useEffect(() => {
     fetchData();
-  }, [activeOption]);
+  }, [activeOption, currentPage]);
 
   const fetchData = async () => {
     try {
-      const { data, error } = await supabase
+      let { data, error } = await supabase
         .from(activeOption)
         .select('*');
 
@@ -20,7 +27,13 @@ const HomeWhoWeHelp = () => {
         throw error;
       }
 
-      setData(data);
+      
+      if (activeOption === 'local') {
+        setData(data || []);
+      } else {
+        data = data.slice((currentPage - 1) * itemsPerPage[activeOption], currentPage * itemsPerPage[activeOption]);
+        setData(data || []);
+      }
     } catch (error) {
       console.error('Error fetching data:', error.message);
     }
@@ -28,6 +41,34 @@ const HomeWhoWeHelp = () => {
 
   const handleOptionChange = (option) => {
     setActiveOption(option);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const renderPaginationNumbers = () => {
+    if (activeOption === 'local') {
+      return null;
+    }
+
+    const totalPages = Math.ceil(data.length / itemsPerPage[activeOption]);
+    const pagesToDisplay = activeOption === 'foundations' ? 3 : (activeOption === 'ngo' ? 2 : 1);
+
+    return (
+      <div className="page-numbers">
+        {Array.from({ length: pagesToDisplay }).map((_, index) => (
+          <span
+            key={index + 1}
+            className={`page-number ${currentPage === index + 1 ? 'active' : ''}`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </span>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -60,8 +101,7 @@ const HomeWhoWeHelp = () => {
         ))}
       </div>
 
-      <div className="page-numbers">
-      </div>
+      {renderPaginationNumbers()}
     </div>
   );
 };

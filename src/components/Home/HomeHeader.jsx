@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 
 const HomeHeader = () => {
   return (
-    <div className="home-header">
+    <div className="home-header" >
       <div className="top-row">
         <div className="left-section">
           <img src={HeroImage} alt="Logo" />
@@ -15,7 +15,7 @@ const HomeHeader = () => {
           <Navigation />
         </div>
       </div>
-      <div className="bottom-row">
+      <div className="bottom-row" >
         <div className="main-section">
           <h1>
             Zacznij pomagać! <br />
