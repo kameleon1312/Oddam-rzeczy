@@ -1,8 +1,9 @@
 import React from 'react';
+import '../../scss/HomeStyle/HomeTreeColumns.scss';
 
 const HomeThreeColumns = () => {
   return (
-    <div className="three-columns-section" style={{ backgroundColor: '#FFA500' }}>
+    <div className="three-columns-section">
       <div className="column">
         <h2>10</h2>
         <h3>Oddanych worków</h3>

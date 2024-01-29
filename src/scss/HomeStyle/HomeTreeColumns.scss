@@ -1,8 +1,12 @@
+@import '../settings/colors.scss';
+
 .three-columns-section {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    
+    background-image: url('../../assets/3\ Columns\ Background.png');
+    background-position: center;
+    background-size: cover;    
   }
   
   .column {
@@ -19,11 +23,12 @@
   }
   
   .column h3 {
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: lighter;
   }
   
   .column p {
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    padding-bottom: 30px;
   }
