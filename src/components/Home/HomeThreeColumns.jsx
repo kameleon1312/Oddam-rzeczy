@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../scss/HomeStyle/HomeTreeColumns.scss';
+import '../../scss/HomeStyle/ThreeColumns.scss';
 
 const HomeThreeColumns = () => {
   return (

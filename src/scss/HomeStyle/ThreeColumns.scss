@@ -4,31 +4,31 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    background-image: url('../../assets/3\ Columns\ Background.png');
+    background-image: url("../../assets/threecolumns.png");
     background-position: center;
-    background-size: cover;    
-  }
-  
-  .column {
+    background-size: cover;
+    min-height: 300px;
+}
+
+.column {
     text-align: center;
     font-weight: normal;
     color: black;
-  }
-  
-  .column h2 {
-    font-family: Open Sans, Light;
+}
+
+.column h2 {
+    font-family: 'Open Sans', Light;
     font-size: 90px;
     font-weight: normal;
+}
 
-  }
-  
-  .column h3 {
+.column h3 {
     font-size: 28px;
     font-weight: lighter;
-  }
-  
-  .column p {
+}
+
+.column p {
     font-size: 16px;
     margin-bottom: 70px;
     padding-bottom: 30px;
-  }
+}

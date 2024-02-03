@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../../supabase';
+import { supabase } from '../../utils/supabase';
 import Decoration from '../../assets/Decoration.svg';
 
 const HomeWhoWeHelp = () => {
   const [activeOption, setActiveOption] = useState('foundations');
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const itemsPerPage = {
     foundations: 3,
@@ -27,7 +28,8 @@ const HomeWhoWeHelp = () => {
         throw error;
       }
 
-      
+      setTotalPages(Math.ceil(data.length / itemsPerPage[activeOption]));
+
       if (activeOption === 'local') {
         setData(data || []);
       } else {
@@ -53,12 +55,9 @@ const HomeWhoWeHelp = () => {
       return null;
     }
 
-    const totalPages = Math.ceil(data.length / itemsPerPage[activeOption]);
-    const pagesToDisplay = activeOption === 'foundations' ? 3 : (activeOption === 'ngo' ? 2 : 1);
-
     return (
       <div className="page-numbers">
-        {Array.from({ length: pagesToDisplay }).map((_, index) => (
+        {Array.from({ length: totalPages }).map((_, index) => (
           <span
             key={index + 1}
             className={`page-number ${currentPage === index + 1 ? 'active' : ''}`}

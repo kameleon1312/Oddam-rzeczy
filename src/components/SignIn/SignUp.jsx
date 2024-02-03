@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navigation from "../Home/Navigation";
-import Decoration from "../../assets/Decoration.svg";
+import { supabase } from "../../utils/supabase";
+import { useAuth } from '../../utils/AuthContext';
 
 const Registration = () => {
   const [email, setEmail] = useState("");
@@ -9,8 +11,9 @@ const Registration = () => {
   const [password2, setPassword2] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { user, login } = useAuth();
 
-  const handleRegistration = (e) => {
+  const handleRegistration = async (e) => {
     e.preventDefault();
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -44,7 +47,31 @@ const Registration = () => {
       setErrors((prevErrors) => ({ ...prevErrors, password2: "" }));
     }
 
-    navigate("/");
+    try {
+      const { user, error } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+
+      if (error) {
+        alert("Rejestracja nieudana: " + error.message);
+      } else {
+        login({ email });
+
+        const { data, error } = await supabase
+          .from("users")
+          .upsert([{ email, password }], { onConflict: ['email'] });
+
+        if (error) {
+          console.error("Błąd podczas zapisywania danych użytkownika:", error.message);
+        } else {
+          alert("Rejestracja udana!");
+          navigate("/");
+        }
+      }
+    } catch (error) {
+      console.error("Błąd podczas rejestracji:", error.message);
+    }
   };
 
   return (
@@ -53,7 +80,6 @@ const Registration = () => {
       <section className="log-section">
         <div className="log-heading-block">
           <h1 className="log-heading">Zarejestruj się</h1>
-          <img src={Decoration} alt="decoration" />
         </div>
         <form className="log-form" onSubmit={handleRegistration}>
           <div className="input-block">

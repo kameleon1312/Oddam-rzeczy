@@ -15,7 +15,7 @@ const HomeHeader = () => {
           <Navigation />
         </div>
       </div>
-      <div className="bottom-row" >
+      <div className="bottom-row">
         <div className="main-section">
           <h1>
             Zacznij pomagać! <br />

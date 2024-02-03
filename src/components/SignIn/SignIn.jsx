@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navigation from "../Home/Navigation";
 import Decoration from "../../assets/Decoration.svg";
+import { supabase } from "../../utils/supabase"; 
+import { useAuth } from '../../utils/AuthContext';
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { login } = useAuth();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -33,7 +36,21 @@ const LogIn = () => {
       setErrors((prevErrors) => ({ ...prevErrors, password: "" }));
     }
 
-    navigate("/");
+    try {
+      const { user, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        alert("Logowanie nieudane: " + error.message);
+      } else {
+        login({ email });
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Błąd podczas logowania:", error.message);
+    }
   };
 
   return (

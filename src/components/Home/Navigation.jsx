@@ -1,19 +1,41 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
-
+import { useAuth } from '../../utils/AuthContext';
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/wylogowanie");
+  };
+
   return (
     <section className="nav-section">
-      <div className="login-container">
-        <RouterLink to="/logowanie">
-          <button className="login-button">Zaloguj</button>
-        </RouterLink>
-        <RouterLink to="/rejestracja">
-          <button className="register-button">Załóż konto</button>
-        </RouterLink>
-      </div>
+      {user ? (
+        <div className="login-container">
+          <p>Zalogowano jako: {user.email}</p>
+          <RouterLink to="/oddaj-rzeczy">
+            <button className="give-away-button">Oddaj rzeczy</button>
+          </RouterLink>
+          <button className="logout-button" onClick={handleLogout}>
+            Wyloguj
+          </button>
+        </div>
+      ) : (
+        <div className="login-container">
+          <RouterLink to="/logowanie">
+            <button className="login-button">Zaloguj</button>
+          </RouterLink>
+          <RouterLink to="/rejestracja">
+            <button className="register-button">Załóż konto</button>
+          </RouterLink>
+        </div>
+      )}
+
       <nav className="navigation-container">
         <ul className="navigation-list">
           <li className="navigation-list_element">
