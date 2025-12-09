@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 90px;
 
   .log-heading {
     font-size: 35px;
@@ -30,6 +30,7 @@
   flex-direction: column;
   background-color: #f0f1f1;
   width: 384px;
+  height: 80%;
 }
 
 .input-block {
@@ -59,9 +60,9 @@
 }
 
 .log-btn-block {
-  width: 1100px;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin-top: 40px;
 
